@@ -1,0 +1,1 @@
+Sympathy Score detector
