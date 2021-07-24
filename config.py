@@ -1,5 +1,5 @@
 # define the variables for train the model
-# output directory
+# output directory, this work if you pass an image for the program as if you train a new model.
 OUTPUT_PATH = 'output'
 
 # model settings

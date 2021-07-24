@@ -16,9 +16,9 @@ args = vars(ap.parse_args())
 
 
 print('[INFO] loading network')
-model = load_model('output/best_at21-07-21 15:40:52.hdf5')
+model = load_model('models/best_at21-07-21 15:40:52.hdf5')
 print("[INFO] loading CNN face detector...")
-detector = dlib.cnn_face_detection_model_v1("../../commonfiles/mmod_human_face_detector.dat")
+detector = dlib.cnn_face_detection_model_v1("models/mmod_human_face_detector.dat")
 
 image = cv2.imread(args['image'])
 # make clone more darker
@@ -85,5 +85,6 @@ print(f'[INFO] this picture has a sympathy score of {sympathy_score}%')
 clone[5:100, 5:120] = score_space
 
 cv2.rectangle(clone, (5, 5), (120, 100), sympathy_color, 1)
+# save the image to disk
 time = datetime.now().strftime('%y-%m-%d %H:%M:%S')
 cv2.imwrite(f'output/score_at_{time}.jpg', clone)

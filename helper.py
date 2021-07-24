@@ -70,7 +70,7 @@ class ImagePP:
 
 class DataLoader:
     """
-    load dataset of images and extract the labels by path (every image must be in the folder named with the label
+    load airplanes of images and extract the labels by path (every image must be in the folder named with the label
     """
 
     def __init__(self, preprocessors=None):
@@ -95,7 +95,7 @@ class DataLoader:
 
         for (i, image_path) in enumerate(image_paths):
             # load the image and extract the label
-            # /path/to/dataset/{label}/{image}.jpg
+            # /path/to/airplanes/{label}/{image}.jpg
             image = cv2.imread(image_path)
             label = image_path.split(os.path.sep)[-2]
 
@@ -125,7 +125,7 @@ def save_plot(H, path):
 
 
 def check_imbalanced_classes(labels, threshold=0.9):
-    print('[INFO] checking for imbalances in dataset')
+    print('[INFO] checking for imbalances in airplanes')
     imbalance = 1
     max_qty = 0
     # find the class with more occurrence

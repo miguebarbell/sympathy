@@ -12,7 +12,6 @@ import numpy as np
 from datetime import datetime
 import os
 import keras_tuner as kt
-
 from tensorflow.keras.utils import to_categorical
 
 patch_sklearn()
@@ -25,7 +24,7 @@ image_paths = list(paths.list_images(config.DATASET))
 image_pp = helper.ImagePP(28, 28, gray=True)
 image2array_pp = helper.Image2ArrayPP()
 
-# load the dataset, show loading images every 500 and update it
+# load the airplanes, show loading images every 500 and update it
 print("[INFO] loading images...")
 data_loader = helper.DataLoader(preprocessors=[image_pp, image2array_pp])
 (data, labels) = data_loader.load(image_paths, verbose=500)
